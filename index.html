@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <ul class="nav nav-pills" id="navMenu">
+        <li class="logo">
+            <a href="#top" class="logo-mark" aria-label="EM logo">EM</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../About/About.html">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Portfolio/portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Services/services.html">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Blog/blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Contact/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Resume/resume.html">Resume/CV</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Projects/projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Services/services.html">Services</a>
+        </li>
+    </ul>
+
+    <div class="site">
+
+        <section class="intro">
+            <div class="text">
+                <h1>Ephakeme Mdlalose</h1>
+                <p>I’m a results-driven <strong class="highlight">IT Technician</strong> with hands-on experience in IT Support, System Administration, networking, and infrastructure troubleshooting. I specialize in printer repairs, CCTV installation and maintenance, secure system deployments, and building clean, functional websites. With a strong foundation in cybersecurity and a growing focus on ethical hacking, I’m passionate about delivering reliable, secure, and efficient technology solutions that solve real-world business problems.</p>
+                <div class="actions">
+                    <button type="button" class="btn btn-primary">Contact Me</button>
+                    <button type="button" class="btn btn-secondary">Download Resume</button>
+                </div>
+            </div>
+
+            <div class="photo" role="img" aria-label="Profile photo placeholder">
+                <div class="photo-placeholder">Photo</div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            const isExpanded = navMenu.classList.contains('active');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', false);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <ul class="nav nav-pills" id="navMenu">
+        <li class="logo">
+            <a href="../Index/index.html" class="logo-mark" aria-label="EM logo">EM</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Index/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../About/About.html">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Portfolio/portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Services/services.html">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Contact/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Resume/resume.html">Resume/CV</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Projects/projects.html">Projects</a>
+        </li>
+    </ul>
+
+    <!-- Header -->
+    <header>
+        <h1>Tech Blog</h1>
+        <p>Insights, tutorials, and practical IT knowledge</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Layout Wrapper -->
+        <section>
+            <!-- Blog Posts -->
+            <article>
+                <h2><a href="post.html"></a></h2>
+                <p><small></small></p>
+                <p>
+                    
+                </p>
+                <a href="post.html"></a>
+            </article>
+
+            <hr>
+
+            <article>
+                <h2><a href="post.html"></a></h2>
+                <p><small></small></p>
+                <p>
+
+                </p>
+                <a href="post.html"></a>
+            </article>
+
+            <hr>
+
+            <article>
+                <h2><a href="post.html"></a></h2>
+                <p><small></small></p>
+                <p>
+                    
+                </p>
+                <a href="post.html"></a>
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <section>
+                <h3>About This Blog</h3>
+                <p>
+                    Practical IT insights from real-world experience in support, networking,
+                    cybersecurity, and systems administration.
+                </p>
+            </section>
+
+            <section>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">IT Support</a></li>
+                    <li><a href="#">Networking</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                    <li><a href="#">System Administration</a></li>
+                    <li><a href="#">Web Development</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Pagination -->
+    <nav aria-label="Blog pagination">
+        <a href="#">Previous</a> |
+        <a href="#">Next</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ephakeme Mdlalose. All rights reserved.</p>
+    </footer>
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            const isExpanded = navMenu.classList.contains('active');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', false);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+</body>
+</html>
